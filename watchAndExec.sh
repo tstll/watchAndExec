@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 
+FILE="$1"
 if [ ! -x "$1" ]; then
 	echo "Usage: $(basename $0) Executable" 
 	exit 1
@@ -8,7 +9,6 @@ function byebye() {
 	reset
 	exit 0
 }
-FILE="$1"
 PS1=
 trap 'byebye' SIGINT
 echo -e "\e[?25l"
